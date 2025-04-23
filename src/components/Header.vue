@@ -1,6 +1,7 @@
 <template>
-  <header class="site-header">
+  <header class="site-header d-flex justify-space-between align-center">
     <h2>Startup Evaluation</h2>
+    <v-btn icon="mdi-account"></v-btn>
   </header>
 </template>
 
