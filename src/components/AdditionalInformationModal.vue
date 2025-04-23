@@ -16,6 +16,9 @@ const emit = defineEmits<{ submit: (additionalInformation: { investmentStage: In
         <v-card-text>
           <v-label>Investment stage</v-label>
           <v-select v-model="investmentStage" :items="['Pre-seed', 'Seed', 'Series A', 'Series B+']"></v-select>
+
+          <v-label>Industry</v-label>
+          <v-select model-value="FinTech" :items="['FinTech', 'HealthTech', 'ConstructionTech', 'AgrarTech', 'ClimateTech', 'FoodTech', 'Other']"></v-select>
         </v-card-text>
 
         <v-card-actions>
