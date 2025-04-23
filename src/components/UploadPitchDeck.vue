@@ -91,23 +91,9 @@ function handleFileChange(event: Event) {
   text-align: center;
 }
 
-.upload-icon {
-  transition: transform 0.3s ease;
-}
-
-.icon-animate {
-  transform: scale(1.2) rotate(5deg);
-}
-
 .text {
   font-size: 18px;
   font-weight: 500;
   margin-top: 12px;
-}
-
-.upload-btn {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 </style>
