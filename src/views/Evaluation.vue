@@ -16,16 +16,20 @@ async function onUpload(file: File) {
   pitchDeckEvaluation.value = await ApiService.uploadPitchDeck(file)
   isLoading.value = false
 }
+
+function onReset() {
+  pitchDeck.value = null
+  pitchDeckEvaluation.value = null
+}
 </script>
 
 <template>
   <v-card width="1200px" height="600px">
     <v-card-text class="h-100">
-      <v-btn icon="mdi-chevron-left"></v-btn>
       <div class="d-flex align-center justify-center mt-auto mb-auto h-100">
         <Loader v-if="isLoading"></Loader>
         <UploadPitchDeck v-if="pitchDeck === null" @upload="onUpload" />
-        <EvaluationResults v-if="pitchDeckEvaluation" :pitchDeckEvaluation="pitchDeckEvaluation"></EvaluationResults>
+        <EvaluationResults v-if="pitchDeckEvaluation" :pitchDeckEvaluation="pitchDeckEvaluation" @reset="onReset"></EvaluationResults>
       </div>
     </v-card-text>
   </v-card>
