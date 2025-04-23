@@ -10,8 +10,8 @@ const emit = defineEmits<{ submit: (additionalInformation: { investmentStage: In
 </script>
 
 <template>
-  <v-dialog max-width="500" :model-value="open" @after-leave="emit('close')">
-    <template v-slot:default="{ isActive }">
+  <v-dialog max-width="500" :model-value="open">
+    <template v-slot:default>
       <v-card title="Additional information">
         <v-card-text>
           <v-label>Investment stage</v-label>
