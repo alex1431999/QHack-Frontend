@@ -1,6 +1,11 @@
 <template>
   <header class="site-header d-flex justify-space-between align-center">
     <h2>Startup Evaluation</h2>
+    <v-btn>Startup Evaluation</v-btn>
+    <v-btn>Startup crawling</v-btn>
+    <v-btn>Industry analysis</v-btn>
+    <v-btn>Startup reachout</v-btn>
+
     <div class="d-flex">
       <v-btn icon="mdi-cog" class="mr-2"></v-btn>
       <v-btn icon="mdi-account"></v-btn>
