@@ -65,8 +65,20 @@ export const categoryMapping: Record<Criteria, Category> = {
   'founder_past_exits': 'Team',
   'founder_background': 'Team',
   'country_of_headquarters': 'Risks',
-
 }
+
+export const CATEGORIES: Category[] = [
+  'Hard fund criteria',
+  'Team',
+  'Problem',
+  'Solution',
+  'Traction',
+  'Market',
+  'Business model',
+  'Financials',
+  'Risks',
+  'Red flags',
+]
 
 export const scoringFunctions: Record<Criteria, (value: any, investmentStage: InvestmentStage) => number> = {
   annual_recurring_revenue: (value: number, investmentStage) => value + 12 // TODO fix this

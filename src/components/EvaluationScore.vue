@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {type Category, categoryMapping, type ScoringItemType} from "@/utils/scoring.ts";
+import {CATEGORIES, type Category, categoryMapping, type ScoringItemType} from "@/utils/scoring.ts";
 import ScoringCategory from "@/components/ScoringCategory.vue";
 import type {InvestmentStage} from "@/types/evaluation.ts";
 
@@ -10,6 +10,7 @@ function getCategory(scoringItem: ScoringItemType): Category {
 }
 
 function getItems(category: Category): ScoringItemType[] {
+  if (!category) return []
   return scoringItems.filter((item: ScoringItemType) => getCategory(item) === category)
 }
 </script>
@@ -19,9 +20,9 @@ function getItems(category: Category): ScoringItemType[] {
     <v-card-title>Score</v-card-title>
     <v-card-text>
       <ScoringCategory
-        v-for="scoringItem in scoringItems"
-        :category="getCategory(scoringItem)"
-        :items="getItems(getCategory(scoringItem))"
+        v-for="category in CATEGORIES"
+        :category="category"
+        :items="getItems(category)"
         :investment-stage="investmentStage"
       />
     </v-card-text>
