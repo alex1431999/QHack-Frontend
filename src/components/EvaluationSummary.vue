@@ -20,7 +20,7 @@ const informationList = Object.keys(information).map((label) => ({ label, value:
       <h2>General</h2>
       <div v-for="information in informationList" :key="information.label" class="d-flex justify-space-between">
         <div> {{ summaryLabelMap[information.label] }}: </div>
-        <div>{{ information.value }}</div>
+        <div>{{ information.value || 'No Data...' }}</div>
       </div>
     </v-card-text>
   </v-card>
