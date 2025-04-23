@@ -19,8 +19,8 @@ async function onUpload(file: File) {
 
 <template>
   <v-card width="1200px" height="600px">
-    <v-card-text>
-      <div class="d-flex align-center justify-center">
+    <v-card-text class="h-100">
+      <div class="d-flex align-center justify-center mt-auto mb-auto h-100">
         <Loader v-if="isLoading"></Loader>
         <UploadPitchDeck v-if="pitchDeck === null" @upload="onUpload" />
       </div>
