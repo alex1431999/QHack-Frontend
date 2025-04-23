@@ -81,6 +81,7 @@ function handleFileChange(event: Event) {
 <style scoped>
 .dropzone {
   height: 500px;
+  width: 100%;
   border: 2px dashed #ccc;
   border-radius: 16px;
   background: linear-gradient(135deg, #f5f5f5, #fafafa);

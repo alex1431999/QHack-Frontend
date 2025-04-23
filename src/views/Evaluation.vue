@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import UploadPitchDeck from '@/components/UploadPitchDeck.vue'
+import Loader from '@/components/Loader.vue'
 import {ref} from "vue";
 import {ApiService, type PitchDeckEvaluation} from "@/services/api.ts";
 
@@ -19,7 +20,10 @@ async function onUpload(file: File) {
 <template>
   <v-card width="1200px" height="600px">
     <v-card-text>
-      <UploadPitchDeck v-if="pitchDeck === null" @upload="onUpload" />
+      <div class="d-flex align-center justify-center">
+        <Loader v-if="isLoading"></Loader>
+        <UploadPitchDeck v-if="pitchDeck === null" @upload="onUpload" />
+      </div>
     </v-card-text>
   </v-card>
 </template>
