@@ -14,6 +14,6 @@ const criteriaName = computed(() => criteriaNameMap[criteria])
   <div class="d-flex justify-space-between">
     <div> {{ criteriaName }} </div>
     <div> {{ value }} </div>
-    <div> {{ score }} </div>
+    <div> {{ (score || 0) * 100 }} </div>
   </div>
 </template>
