@@ -9,7 +9,14 @@ export class ApiService {
 
   public static async uploadPitchDeck(file: File): Promise<PitchDeckEvaluation> {
     const url = `${ApiService.BASE_URL}/upload-pdf/`
-    const response = await axios.post(url, file)
+    const formData = new FormData()
+    formData.append('file', file)
+
+    const response = await axios.post(url, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
 
     return response.data
   }
