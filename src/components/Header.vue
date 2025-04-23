@@ -1,7 +1,10 @@
 <template>
   <header class="site-header d-flex justify-space-between align-center">
     <h2>Startup Evaluation</h2>
-    <v-btn icon="mdi-account"></v-btn>
+    <div class="d-flex">
+      <v-btn icon="mdi-cog" class="mr-2"></v-btn>
+      <v-btn icon="mdi-account"></v-btn>
+    </div>
   </header>
 </template>
 
@@ -20,3 +23,5 @@
   padding: 20px;
 }
 </style>
+<script setup lang="ts">
+</script>
