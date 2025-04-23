@@ -51,7 +51,6 @@ function handleDrop(event: DragEvent) {
 }
 
 function triggerFileDialog() {
-  console.log('called')
   fileInput.value?.click()
 }
 
