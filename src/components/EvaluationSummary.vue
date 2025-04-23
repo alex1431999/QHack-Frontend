@@ -1,12 +1,25 @@
 <script setup lang="ts">
-const { summary } = defineProps<{ summary: string }>()
+import type {Summary} from "@/services/api.ts";
+
+const { summary } = defineProps<{ summary: Summary }>()
+const { company_name, pitch_deck_summary, one_sentence_pitch, ...information } = summary
+const informationList = Object.keys(information).map((label) => ({ label, value: information[label] }))
 </script>
 
 <template>
   <v-card width="500" elevation="10">
-    <v-card-title>Summary</v-card-title>
+    <v-card-title>{{ company_name || 'Company' }}</v-card-title>
     <v-card-text>
-      <div class="text">{{ summary }}</div>
+      <h2>One sentence pitch</h2>
+      <div class="mb-2">{{ one_sentence_pitch }}</div>
+
+      <h2>Summary</h2>
+      <div class="mb-2">{{ pitch_deck_summary }}</div>
+
+      <h2>General</h2>
+      <div v-for="information in informationList" :key="information.label">
+        {{ information.label }}: {{ information.value }}
+      </div>
     </v-card-text>
   </v-card>
 </template>

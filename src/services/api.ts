@@ -1,8 +1,23 @@
 import axios from "axios";
 import type {Criteria} from "@/utils/scoring.ts";
 
+export type Summary = {
+  company_name: string | null
+  official_company_name: string | null
+  year_of_founding: number | null
+  location_of_headquarters: string | null
+  business_model: string | null
+  industry: string | null
+  required_funding_amount: number | null
+  employees: number | null
+  website_link: string | null
+  one_sentence_pitch: string | null
+  linkedin_profile_ceo: string | null
+  pitch_deck_summary: string | null
+}
+
 export type PitchDeckEvaluation = {
-  company_info: any
+  company_info: Summary
   criteria: Record<Criteria, number | null>
 }
 
