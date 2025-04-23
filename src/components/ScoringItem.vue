@@ -9,5 +9,9 @@ const score = scoringFunction ? scoringFunction(value, investmentStage) : 0
 </script>
 
 <template>
-  <div>{{ criteria }} {{ value }} {{ score }}</div>
+  <div class="d-flex justify-space-between">
+    <div> {{ criteria }} </div>
+    <div> {{ value }} </div>
+    <div> {{ score }} </div>
+  </div>
 </template>
