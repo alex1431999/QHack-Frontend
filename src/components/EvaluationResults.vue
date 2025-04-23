@@ -5,7 +5,8 @@ import EvaluationSummary from "@/components/EvaluationSummary.vue";
 
 <template>
   <div class="d-flex justify-center">
-    <EvaluationSummary class="mr-16" summary="Summary"/>
+    <EvaluationSummary class="mr-10" summary="Summary"/>
+    <v-divider class="mr-10" vertical></v-divider>
     <EvaluationSummary summary="Summary"/>
   </div>
 </template>
