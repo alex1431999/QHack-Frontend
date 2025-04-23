@@ -30,7 +30,6 @@
       <input
         ref="fileInput"
         type="file"
-        multiple
         class="d-none"
         @change="handleFileChange"
       />
@@ -45,7 +44,7 @@ const isDragging = ref(false)
 const fileInput = ref<HTMLInputElement | null>(null)
 
 const emit = defineEmits<{
-  (e: 'upload', files: File[]): void
+  (e: 'upload', file: File): void
 }>()
 
 function handleDragOver() {
@@ -60,7 +59,7 @@ function handleDrop(event: DragEvent) {
   isDragging.value = false
   if (event.dataTransfer?.files) {
     const files = Array.from(event.dataTransfer.files)
-    emit('upload', files)
+    emit('upload', files[0])
   }
 }
 
@@ -72,7 +71,7 @@ function handleFileChange(event: Event) {
   const target = event.target as HTMLInputElement
   if (target.files) {
     const files = Array.from(target.files)
-    emit('upload', files)
+    emit('upload', files[0])
     target.value = ''
   }
 }
@@ -96,7 +95,6 @@ function handleFileChange(event: Event) {
 }
 
 .drop-active {
-  border-color: var(--v-theme-primary);
   background: linear-gradient(135deg, #e3f2fd, #f0faff);
   box-shadow: 0 0 16px rgba(33, 150, 243, 0.3);
 }
@@ -107,7 +105,6 @@ function handleFileChange(event: Event) {
 
 .upload-icon {
   transition: transform 0.3s ease;
-  color: var(--v-theme-primary);
 }
 
 .icon-animate {
