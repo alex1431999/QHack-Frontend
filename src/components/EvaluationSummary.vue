@@ -5,7 +5,9 @@ const { summary } = defineProps<{ summary: string }>()
 <template>
   <v-card width="500" height="400" elevation="10">
     <v-card-title>Summary</v-card-title>
-    <v-card-text> {{ summary }}</v-card-text>
+    <v-card-text>
+      <div class="text">{{ summary }}</div>
+    </v-card-text>
   </v-card>
 </template>
 
