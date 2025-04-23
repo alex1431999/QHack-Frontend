@@ -16,8 +16,8 @@ async function onUpload(file: File) {
   openModal.value = true
 }
 
-async function onAdditionalInformationSubmitted({ investmentPhase }) {
-  console.log(investmentPhase) // TODO
+async function onAdditionalInformationSubmitted({ investmentStage }) {
+  console.log(investmentStage) // TODO
   openModal.value = false
 
   isLoading.value = true
