@@ -25,6 +25,12 @@ async function onAdditionalInformationSubmitted({ investmentStage }) {
   isLoading.value = false
 }
 
+function onModalClose() {
+  console.log('called')
+  openModal.value = false
+  pitchDeck.value = null
+}
+
 function onReset() {
   pitchDeck.value = null
   pitchDeckEvaluation.value = null
@@ -33,7 +39,7 @@ function onReset() {
 
 <template>
   <v-card width="1200px" height="600px">
-    <AdditionalInformationModal :open="openModal" @submit="onAdditionalInformationSubmitted" />
+    <AdditionalInformationModal :open="openModal" @submit="onAdditionalInformationSubmitted" @close="onModalClose" />
     <v-card-text class="h-100">
       <div class="d-flex align-center justify-center mt-auto mb-auto h-100">
         <Loader v-if="isLoading"></Loader>

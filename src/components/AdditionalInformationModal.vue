@@ -6,11 +6,11 @@ const { open } = defineProps<{ open: boolean }>()
 
 const investmentStage = ref<InvestmentStage>('Pre-seed')
 
-const emit = defineEmits<{ submit: (additionalInformation: { investmentStage: InvestmentStage }) => void }>()
+const emit = defineEmits<{ submit: (additionalInformation: { investmentStage: InvestmentStage }, close: () => void) => void }>()
 </script>
 
 <template>
-  <v-dialog max-width="500" :model-value="open">
+  <v-dialog max-width="500" :model-value="open" @after-leave="emit('close')">
     <template v-slot:default="{ isActive }">
       <v-card title="Additional information">
         <v-card-text>
