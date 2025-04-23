@@ -19,6 +19,7 @@ const emit = defineEmits<{ submit: (additionalInformation: { investmentStage: In
         </v-card-text>
 
         <v-card-actions>
+          <v-btn text="cancel" @click="emit('close')"></v-btn>
           <v-btn
             text="Submit"
             @click="emit('submit', { investmentStage })"
