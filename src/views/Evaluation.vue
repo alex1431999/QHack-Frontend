@@ -40,7 +40,7 @@ function onReset() {
 </script>
 
 <template>
-  <v-card width="1200px" height="600px">
+  <v-card width="1200px" min-height="600">
     <AdditionalInformationModal :open="openModal" @submit="onAdditionalInformationSubmitted" @close="onModalClose" />
     <v-card-text class="h-100">
       <div class="d-flex align-center justify-center mt-auto mb-auto">

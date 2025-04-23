@@ -21,7 +21,7 @@ const scoreColor: string = computed(() => score > scoreThreshold ? 'success': 'e
 </script>
 
 <template>
-  <v-card :color="scoreColor" class="overflow-auto" width="500" height="400" elevation="10">
+  <v-card :color="scoreColor" class="overflow-auto" width="500" elevation="10">
     <v-card-title>
       <div class="d-flex justify-space-between">
         <div>Score</div>
