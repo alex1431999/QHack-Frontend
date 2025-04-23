@@ -5,9 +5,11 @@ import EvaluationResults from '@/components/EvaluationResults.vue'
 import {ref} from "vue";
 import {ApiService, type PitchDeckEvaluation} from "@/services/api.ts";
 import AdditionalInformationModal from "@/components/AdditionalInformationModal.vue";
+import type {InvestmentStage} from "@/types/evaluation.ts";
 
 const pitchDeck = ref<File | null>(null)
 const pitchDeckEvaluation = ref<PitchDeckEvaluation | null>(null)
+const investmentStage = ref<InvestmentStage>('Seed')
 const isLoading = ref(false)
 const openModal = ref(false)
 
@@ -16,8 +18,8 @@ async function onUpload(file: File) {
   openModal.value = true
 }
 
-async function onAdditionalInformationSubmitted({ investmentStage }) {
-  console.log(investmentStage) // TODO
+async function onAdditionalInformationSubmitted(additionalInformation) {
+  investmentStage.value = additionalInformation.investmentStage
   openModal.value = false
 
   isLoading.value = true
@@ -44,7 +46,7 @@ function onReset() {
       <div class="d-flex align-center justify-center mt-auto mb-auto">
         <Loader v-if="isLoading"></Loader>
         <UploadPitchDeck v-if="pitchDeck === null" @upload="onUpload" />
-        <EvaluationResults v-if="pitchDeckEvaluation" :pitchDeckEvaluation="pitchDeckEvaluation" @reset="onReset"></EvaluationResults>
+        <EvaluationResults v-if="pitchDeckEvaluation" :pitchDeckEvaluation="pitchDeckEvaluation" :investment-stage="investmentStage" @reset="onReset"></EvaluationResults>
       </div>
     </v-card-text>
   </v-card>

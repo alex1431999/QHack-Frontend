@@ -1,8 +1,7 @@
-import {sleep} from "@/utils/sleep.ts";
 import axios from "axios";
+import type {Criteria} from "@/utils/scoring.ts";
 
-// TODO define once we know what the evaluation looks like
-export type PitchDeckEvaluation = any
+export type PitchDeckEvaluation = Record<Criteria, number | null>
 
 export class ApiService {
   public static BASE_URL = 'http://0.0.0.0:8000'
@@ -18,6 +17,6 @@ export class ApiService {
       }
     })
 
-    return response.data.processed_info
+    return JSON.parse(response.data.processed_info)
   }
 }
