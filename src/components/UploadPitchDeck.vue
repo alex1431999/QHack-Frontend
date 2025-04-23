@@ -3,6 +3,7 @@
     class="dropzone"
     :class="{ 'drop-active': isDragging }"
     elevation="4"
+    @click="triggerFileDialog"
     @dragover.prevent="handleDragOver"
     @dragleave="handleDragLeave"
     @drop.prevent="handleDrop"
