@@ -7,7 +7,11 @@ const { category, items, investmentStage } = defineProps<{ category: Category, i
 </script>
 
 <template>
-  <h2>{{ category }}</h2>
-  <ScoringItem v-for="item in items" :criteria="item.criteria" :value="item.value" :investment-stage="investmentStage" :key="item.criteria" />
+  <v-expansion-panel :title="category">
+    <v-expansion-panel-text>
+      <ScoringItem v-for="item in items" v-if="items.length" :criteria="item.criteria" :value="item.value" :investment-stage="investmentStage" :key="item.criteria" />
+      <div v-else>No data found...</div>
+    </v-expansion-panel-text>
+  </v-expansion-panel>
 </template>
 

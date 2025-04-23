@@ -19,12 +19,14 @@ function getItems(category: Category): ScoringItemType[] {
   <v-card width="500" height="400" elevation="10">
     <v-card-title>Score</v-card-title>
     <v-card-text>
-      <ScoringCategory
-        v-for="category in CATEGORIES"
-        :category="category"
-        :items="getItems(category)"
-        :investment-stage="investmentStage"
-      />
+      <v-expansion-panels>
+        <ScoringCategory
+          v-for="category in CATEGORIES"
+          :category="category"
+          :items="getItems(category)"
+          :investment-stage="investmentStage"
+        />
+      </v-expansion-panels>
     </v-card-text>
   </v-card>
 </template>
