@@ -1,7 +1,10 @@
 import axios from "axios";
 import type {Criteria} from "@/utils/scoring.ts";
 
-export type PitchDeckEvaluation = Record<Criteria, number | null>
+export type PitchDeckEvaluation = {
+  company_info: any
+  criteria: Record<Criteria, number | null>
+}
 
 export class ApiService {
   public static BASE_URL = 'http://0.0.0.0:8000'
@@ -17,6 +20,9 @@ export class ApiService {
       }
     })
 
-    return JSON.parse(response.data.processed_info)
+    const data = JSON.parse(response.data.processed_info)
+    const { company_info, ...criteria } = data
+
+    return { company_info, criteria }
   }
 }

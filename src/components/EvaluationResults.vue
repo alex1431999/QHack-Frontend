@@ -16,7 +16,7 @@ const scoringItems = pitchDeckEvaluationToScoringItems(pitchDeckEvaluation)
     <v-btn class="mb-5" icon="mdi-chevron-left" @click="emit('reset')"></v-btn>
 
     <div class="d-flex justify-center">
-      <EvaluationSummary class="mr-10" :summary="pitchDeckEvaluation"/>
+      <EvaluationSummary class="mr-10" :summary="pitchDeckEvaluation.company_info"/>
       <v-divider class="mr-10" vertical></v-divider>
       <EvaluationScore :scoring-items="scoringItems" :investment-stage="investmentStage" />
     </div>
