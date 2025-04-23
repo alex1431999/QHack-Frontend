@@ -9,8 +9,8 @@
     @drop.prevent="handleDrop"
   >
     <div class="content">
+      <v-icon size="x-large" icon="mdi-upload"></v-icon>
       <div class="text">
-        <v-icon icon="mdi-upload"></v-icon>
         {{ isDragging ? 'Drop your files here!' : 'Upload your pitch deck with drag and drop!' }}
       </div>
       <input
