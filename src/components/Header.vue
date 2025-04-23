@@ -1,0 +1,21 @@
+<template>
+  <header class="site-header">
+    <h2>Startup Evaluation</h2>
+  </header>
+</template>
+
+
+<style scoped>
+.site-header {
+  width: 100%;
+  height: 80px;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px;
+}
+</style>
