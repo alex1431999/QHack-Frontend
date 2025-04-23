@@ -24,7 +24,7 @@ async function onUpload(file: File) {
       <div class="d-flex align-center justify-center mt-auto mb-auto h-100">
         <Loader v-if="isLoading"></Loader>
         <UploadPitchDeck v-if="pitchDeck === null" @upload="onUpload" />
-        <EvaluationResults v-if="pitchDeckEvaluation"></EvaluationResults>
+        <EvaluationResults v-if="pitchDeckEvaluation" :pitchDeckEvaluation="pitchDeckEvaluation"></EvaluationResults>
       </div>
     </v-card-text>
   </v-card>

@@ -18,6 +18,6 @@ export class ApiService {
       }
     })
 
-    return response.data
+    return response.data.processed_info
   }
 }
