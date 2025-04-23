@@ -31,6 +31,7 @@
         ref="fileInput"
         type="file"
         class="d-none"
+        accept="application/pdf"
         @change="handleFileChange"
       />
     </div>
