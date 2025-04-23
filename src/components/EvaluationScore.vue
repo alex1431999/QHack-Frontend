@@ -16,7 +16,7 @@ function getItems(category: Category): ScoringItemType[] {
 </script>
 
 <template>
-  <v-card width="500" height="400" elevation="10">
+  <v-card class="overflow-auto" width="500" height="400" elevation="10">
     <v-card-title>Score</v-card-title>
     <v-card-text>
       <v-expansion-panels>
