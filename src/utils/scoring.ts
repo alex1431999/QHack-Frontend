@@ -114,6 +114,137 @@ export const scoringFunctions: Record<Criteria, (value: any, investmentStage: In
     if (investmentStage === 'Seed') return value > 50000 ? 1 : 0
     if (investmentStage === 'Series A') return value > 500000 ? 1 : 0
     if (investmentStage === 'Series B+') return value > 5000000 ? 1 : 0
-  }
-  // TODO add the rest
+  },
+  monthly_recurring_revenue: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return 1
+    if (investmentStage === 'Seed') return value > 5000 ? 1 : 0
+    if (investmentStage === 'Series A') return value > 50000 ? 1 : 0
+    if (investmentStage === 'Series B+') return value > 300000 ? 1 : 0
+  },
+  customer_acquisition_cost: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return 1
+    if (investmentStage === 'Seed') return value < 2000 ? 1 : 0
+    if (investmentStage === 'Series A') return value < 4000 ? 1 : 0
+    if (investmentStage === 'Series B+') return value < 6000 ? 1 : 0
+  },
+  customer_lifetime_value: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return 1
+    if (investmentStage === 'Seed') return value > 1000 ? 1 : 0
+    if (investmentStage === 'Series A') return value > 3000 ? 1 : 0
+    if (investmentStage === 'Series B+') return value > 10000 ? 1 : 0
+  },
+  cltv_cac_ratio: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return 1
+    if (investmentStage === 'Seed') return value > 1 ? 1 : 0
+    if (investmentStage === 'Series A') return value > 2 ? 1 : 0
+    if (investmentStage === 'Series B+') return value > 3 ? 1 : 0
+  },
+  gross_margin: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return 1
+    if (investmentStage === 'Seed') return value > 0.6 ? 1 : 0
+    if (investmentStage === 'Series A') return value > 0.7 ? 1 : 0
+    if (investmentStage === 'Series B+') return value > 0.8 ? 1 : 0
+  },
+  revenue_growth_rate_yoy: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return 1
+    if (investmentStage === 'Seed') return value > 2 ? 1 : 0
+    if (investmentStage === 'Series A') return value > 3 ? 1 : 0
+    if (investmentStage === 'Series B+') return value > 4 ? 1 : 0
+  },
+  revenue_growth_rate_mom: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return value > 0.1 ? 1 : 0
+    if (investmentStage === 'Seed') return value > 0.2 ? 1 : 0
+    if (investmentStage === 'Series A') return value > 0.3 ? 1 : 0
+    if (investmentStage === 'Series B+') return value > 0.4 ? 1 : 0
+  },
+  sales_cycle_length: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return 1
+    if (investmentStage === 'Seed') return value < 60 ? 1 : 0
+    if (investmentStage === 'Series A') return value < 45 ? 1 : 0
+    if (investmentStage === 'Series B+') return value < 60 ? 1 : 0
+  },
+  monthly_active_users: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return 1
+    if (investmentStage === 'Seed') return value > 500 ? 1 : 0
+    if (investmentStage === 'Series A') return value > 5000 ? 1 : 0
+    if (investmentStage === 'Series B+') return value > 50000 ? 1 : 0
+  },
+  user_growth_rate_yoy: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return 1
+    if (investmentStage === 'Seed') return value > 1 ? 1 : 0
+    if (investmentStage === 'Series A') return value > 3 ? 1 : 0
+    if (investmentStage === 'Series B+') return value > 5 ? 1 : 0
+  },
+  user_growth_rate_mom: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return value > 0.1 ? 1 : 0
+    if (investmentStage === 'Seed') return value > 0.2 ? 1 : 0
+    if (investmentStage === 'Series A') return value > 0.3 ? 1 : 0
+    if (investmentStage === 'Series B+') return value > 0.4 ? 1 : 0
+  },
+  conversion_rate: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return 1
+    if (investmentStage === 'Seed') return value > 0.05 ? 1 : 0
+    if (investmentStage === 'Series A') return value > 0.1 ? 1 : 0
+    if (investmentStage === 'Series B+') return value > 0.2 ? 1 : 0
+  },
+  burn_rate: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return value < 50000 ? 1 : 0
+    if (investmentStage === 'Seed') return value < 150000 ? 1 : 0
+    if (investmentStage === 'Series A') return value < 300000 ? 1 : 0
+    if (investmentStage === 'Series B+') return 1
+  },
+  pricing_strategy_maturity: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return value
+    if (investmentStage === 'Seed') return value
+    if (investmentStage === 'Series A') return value
+    if (investmentStage === 'Series B+') return value
+  },
+  runway: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return 1
+    if (investmentStage === 'Seed') return value > 6 ? 1 : 0
+    if (investmentStage === 'Series A') return value > 12 ? 1 : 0
+    if (investmentStage === 'Series B+') return value > 18 ? 1 : 0
+  },
+  ip_protection: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return value
+    if (investmentStage === 'Seed') return value
+    if (investmentStage === 'Series A') return value
+    if (investmentStage === 'Series B+') return value
+  },
+  market_competitiveness: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return value >= 3 ? 1 : 0
+    if (investmentStage === 'Seed') return value >= 3 ? 1 : 0
+    if (investmentStage === 'Series A') return value >= 4 ? 1 : 0
+    if (investmentStage === 'Series B+') return value >= 5 ? 1 : 0
+  },
+  cap_table_cleanliness: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return value >= 2 ? 1 : 0
+    if (investmentStage === 'Seed') return value >= 3 ? 1 : 0
+    if (investmentStage === 'Series A') return value >= 4 ? 1 : 0
+    if (investmentStage === 'Series B+') return value >= 5 ? 1 : 0
+  },
+  founder_industry_experience: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return value
+    if (investmentStage === 'Seed') return value
+    if (investmentStage === 'Series A') return value
+    if (investmentStage === 'Series B+') return value
+  },
+  founder_past_exits: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return 1
+    if (investmentStage === 'Seed') return value
+    if (investmentStage === 'Series A') return value
+    if (investmentStage === 'Series B+') return value
+  },
+  founder_background: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return 1
+    if (investmentStage === 'Seed') return value
+    if (investmentStage === 'Series A') return value
+    if (investmentStage === 'Series B+') return value
+  },
+  country_of_headquarters: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return value
+    if (investmentStage === 'Seed') return value
+    if (investmentStage === 'Series A') return value
+    if (investmentStage === 'Series B+') return value
+  },
 }
