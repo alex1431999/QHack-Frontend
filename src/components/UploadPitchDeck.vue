@@ -9,25 +9,10 @@
     @drop.prevent="handleDrop"
   >
     <div class="content">
-      <v-icon
-        class="upload-icon"
-        size="64"
-        :class="{ 'icon-animate': isDragging }"
-      >
-        mdi-cloud-upload
-      </v-icon>
       <div class="text">
+        <v-icon icon="mdi-upload"></v-icon>
         {{ isDragging ? 'Drop your files here!' : 'Upload your pitch deck with drag and drop!' }}
       </div>
-      <v-btn
-        class="mt-4 upload-btn"
-        color="primary"
-        size="large"
-        variant="tonal"
-        @click="triggerFileDialog"
-      >
-        Browse Files
-      </v-btn>
       <input
         ref="fileInput"
         type="file"
@@ -66,6 +51,7 @@ function handleDrop(event: DragEvent) {
 }
 
 function triggerFileDialog() {
+  console.log('called')
   fileInput.value?.click()
 }
 
