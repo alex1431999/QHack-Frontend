@@ -80,7 +80,7 @@ function handleFileChange(event: Event) {
 
 <style scoped>
 .dropzone {
-  height: 500px;
+  height: 550px;
   width: 100%;
   border: 2px dashed #ccc;
   border-radius: 16px;
