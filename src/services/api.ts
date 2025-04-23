@@ -5,7 +5,7 @@ import axios from "axios";
 export type PitchDeckEvaluation = any
 
 export class ApiService {
-  public static BASE_URL = 'localhost:8000'
+  public static BASE_URL = 'http://0.0.0.0:8000'
 
   public static async uploadPitchDeck(file: File): Promise<PitchDeckEvaluation> {
     const url = `${ApiService.BASE_URL}/upload-pdf/`
