@@ -4,7 +4,6 @@ import UploadPitchDeck from '@/components/UploadPitchDeck.vue'
 
 <template>
   <v-card width="1200px" height="600px">
-    <v-card-title>Evaluation</v-card-title>
     <v-card-text>
       <UploadPitchDeck />
     </v-card-text>
