@@ -42,7 +42,30 @@ export type ScoringItemType = { criteria: Criteria, value: number | null }
 
 export const categoryMapping: Record<Criteria, Category> = {
   'annual_recurring_revenue': 'Financials',
-  // TODO add the rest
+  'monthly_recurring_revenue': 'Financials',
+  'customer_acquisition_cost': 'Financials',
+  'customer_lifetime_value': 'Financials',
+  'cltv_cac_ratio': 'Financials',
+  'gross_margin': 'Financials',
+  'revenue_growth_rate_yoy': 'Financials',
+  'revenue_growth_rate_mom': 'Financials',
+  'sales_cycle_length': 'Financials',
+  'monthly_active_users': 'Traction',
+  'user_growth_rate_yoy': 'Traction',
+  'user_growth_rate_mom': 'Traction',
+  'conversion_rate': 'Traction',
+  'burn_rate': 'Financials',
+  'pricing_strategy_maturity': 'Business model',
+  'runway': 'Financials',
+  'ip_protection': 'Business model',
+  'market_competitiveness': 'Market',
+  'market_timing': 'Market',
+  'cap_table_cleanliness': 'Financials',
+  'founder_industry_experience': 'Team',
+  'founder_past_exits': 'Team',
+  'founder_background': 'Team',
+  'country_of_headquarters': 'Risks',
+
 }
 
 export const scoringFunctions: Record<Criteria, (value: any, investmentStage: InvestmentStage) => number> = {
