@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type {Summary} from "@/services/api.ts";
+import {summaryLabelMap} from "@/utils/evaluation.ts";
 
 const { summary } = defineProps<{ summary: Summary }>()
 const { company_name, pitch_deck_summary, one_sentence_pitch, ...information } = summary
@@ -17,8 +18,9 @@ const informationList = Object.keys(information).map((label) => ({ label, value:
       <div class="mb-2">{{ pitch_deck_summary }}</div>
 
       <h2>General</h2>
-      <div v-for="information in informationList" :key="information.label">
-        {{ information.label }}: {{ information.value }}
+      <div v-for="information in informationList" :key="information.label" class="d-flex justify-space-between">
+        <div> {{ summaryLabelMap[information.label] }}: </div>
+        <div>{{ information.value }}</div>
       </div>
     </v-card-text>
   </v-card>
