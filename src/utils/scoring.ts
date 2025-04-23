@@ -248,3 +248,7 @@ export const scoringFunctions: Record<Criteria, (value: any, investmentStage: In
     if (investmentStage === 'Series B+') return value
   },
 }
+
+export function normaliseScore(score: number | null) {
+  return (score || 0) * 100
+}

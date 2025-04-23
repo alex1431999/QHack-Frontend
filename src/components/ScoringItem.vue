@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {type Criteria, criteriaNameMap, scoringFunctions} from "@/utils/scoring.ts";
+import {type Criteria, criteriaNameMap, normaliseScore, scoringFunctions} from "@/utils/scoring.ts";
 import type {InvestmentStage} from "@/types/evaluation.ts";
 import {computed} from "vue";
 
@@ -14,6 +14,6 @@ const criteriaName = computed(() => criteriaNameMap[criteria])
   <div class="d-flex justify-space-between">
     <div> {{ criteriaName }} </div>
     <div> {{ value }} </div>
-    <div> {{ (score || 0) * 100 }} </div>
+    <div> {{ normaliseScore(score) }} </div>
   </div>
 </template>
