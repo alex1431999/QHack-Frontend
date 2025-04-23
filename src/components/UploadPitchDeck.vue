@@ -16,7 +16,7 @@
         mdi-cloud-upload
       </v-icon>
       <div class="text">
-        {{ isDragging ? 'Drop your files here!' : 'Drag & drop files or click to upload' }}
+        {{ isDragging ? 'Drop your files here!' : 'Upload your pitch deck with drag and drop!' }}
       </div>
       <v-btn
         class="mt-4 upload-btn"
@@ -80,7 +80,7 @@ function handleFileChange(event: Event) {
 
 <style scoped>
 .dropzone {
-  height: 300px;
+  height: 500px;
   border: 2px dashed #ccc;
   border-radius: 16px;
   background: linear-gradient(135deg, #f5f5f5, #fafafa);
