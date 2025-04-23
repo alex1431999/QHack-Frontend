@@ -67,6 +67,34 @@ export const categoryMapping: Record<Criteria, Category> = {
   'country_of_headquarters': 'Risks',
 }
 
+export const criteriaNameMap: Record<Criteria, string> = {
+  annual_recurring_revenue: 'Annual recurring revenue',
+  monthly_recurring_revenue: 'Monthly recurring revenue',
+  customer_acquisition_cost: 'Customer acquisition cost',
+  customer_lifetime_value: 'Customer lifetime value',
+  cltv_cac_ratio: 'CLTV/CAC ratio',
+  gross_margin: 'Gross margin',
+  revenue_growth_rate_yoy: 'Revenue growth rate (YoY)',
+  revenue_growth_rate_mom: 'Revenue growth rate (MoM)',
+  sales_cycle_length: 'Sales cycle length',
+  monthly_active_users: 'Monthly active users',
+  user_growth_rate_yoy: 'User growth rate (YoY)',
+  user_growth_rate_mom: 'User growth rate (MoM)',
+  conversion_rate: 'Conversion rate',
+  burn_rate: 'Burn rate',
+  pricing_strategy_maturity: 'Pricing strategy maturity',
+  runway: 'Runway',
+  ip_protection: 'IP protection',
+  market_competitiveness: 'Market competitiveness',
+  market_timing: 'Market timing',
+  cap_table_cleanliness: 'Cap table cleanliness',
+  founder_industry_experience: 'Founder industry experience',
+  founder_past_exits: 'Founder past exits',
+  founder_background: 'Founder background',
+  country_of_headquarters: 'Country of headquarters',
+};
+
+
 export const CATEGORIES: Category[] = [
   'Hard fund criteria',
   'Team',
