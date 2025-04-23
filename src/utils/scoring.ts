@@ -109,6 +109,11 @@ export const CATEGORIES: Category[] = [
 ]
 
 export const scoringFunctions: Record<Criteria, (value: any, investmentStage: InvestmentStage) => number> = {
-  annual_recurring_revenue: (value: number, investmentStage) => value + 12 // TODO fix this
+  annual_recurring_revenue: (value: number, investmentStage) => {
+    if (investmentStage === 'Pre-seed') return 1
+    if (investmentStage === 'Seed') return value > 50000 ? 1 : 0
+    if (investmentStage === 'Series A') return value > 500000 ? 1 : 0
+    if (investmentStage === 'Series B+') return value > 5000000 ? 1 : 0
+  }
   // TODO add the rest
 }
