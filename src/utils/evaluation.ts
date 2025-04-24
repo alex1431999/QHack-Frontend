@@ -3,7 +3,7 @@ import type {ScoringItemType} from "@/utils/scoring.ts";
 
 export function pitchDeckEvaluationToScoringItems(pitchDeckEvaluation: PitchDeckEvaluation): ScoringItemType[] {
   const scoringItems = Object.keys(pitchDeckEvaluation.criteria).map(criteria => ({ criteria, value: pitchDeckEvaluation[criteria] }))
-  return scoringItems.map((scoringItem) => ({ ...scoringItem, value: scoringItem.value || Math.random().toFixed(1) }))
+  return scoringItems.map((scoringItem) => ({ ...scoringItem, value: scoringItem.value || parseFloat(Math.random().toFixed(1)) }))
 }
 
 export const summaryLabelMap: Record<keyof Summary, string> = {
