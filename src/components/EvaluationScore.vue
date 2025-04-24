@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import {CATEGORIES, type Category, categoryMapping, type ScoringItemType} from "@/utils/scoring.ts";
+import {
+  CATEGORIES,
+  type Category,
+  categoryMapping,
+  computeFinalScore,
+  type ScoringItemType
+} from "@/utils/scoring.ts";
 import ScoringCategory from "@/components/ScoringCategory.vue";
 import type {InvestmentStage} from "@/types/evaluation.ts";
 import {computed} from "vue";
@@ -15,7 +21,7 @@ function getItems(category: Category): ScoringItemType[] {
   return scoringItems.filter((item: ScoringItemType) => getCategory(item) === category)
 }
 
-const score = 0.73 // TODO
+const score = computeFinalScore(scoringItems, investmentStage)
 const scoreThreshold = 0.7
 const scoreColor: string = computed(() => score > scoreThreshold ? 'success': 'error')
 </script>
@@ -25,7 +31,7 @@ const scoreColor: string = computed(() => score > scoreThreshold ? 'success': 'e
     <v-card-title>
       <div class="d-flex justify-space-between">
         <div>Score</div>
-        <div>{{ score }}</div>
+        <div>{{ score * 100 }}</div>
       </div>
     </v-card-title>
     <v-card-text>
