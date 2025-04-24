@@ -22,7 +22,7 @@ function getItems(category: Category): ScoringItemType[] {
 }
 
 const score = computeFinalScore(scoringItems, investmentStage)
-const scoreThreshold = 0.7
+const scoreThreshold = 0.5
 const scoreColor: string = computed(() => score > scoreThreshold ? 'success': 'error')
 </script>
 
