@@ -264,7 +264,7 @@ export const scoringFunctions: Record<Criteria, (value: any, investmentStage: In
 
 export function computeScoreForCriteria(criteria: Criteria, value: number, investmentStage: InvestmentStage) {
   const scoringFunction = scoringFunctions[criteria]
-  if (!scoringFunction) return 0.5
+  if (!scoringFunction) return 0
   return scoringFunction(value, investmentStage)
 }
 
