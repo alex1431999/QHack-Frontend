@@ -38,7 +38,7 @@ export type Criteria =
   | 'founder_background'
   | 'country_of_headquarters'
 
-export type ScoringItemType = { criteria: Criteria, value: number | null }
+export type ScoringItemType = { criteria: Criteria, value: number | undefined }
 
 export const categoryMapping: Record<Criteria, Category> = {
   'annual_recurring_revenue': 'Financials',
