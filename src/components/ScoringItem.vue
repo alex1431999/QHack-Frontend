@@ -13,7 +13,6 @@ const criteriaName = computed(() => criteriaNameMap[criteria])
 <template>
   <div class="d-flex justify-space-between">
     <div> {{ criteriaName }} </div>
-    <div> {{ value }} </div>
     <div> {{ normaliseScore(score) }} </div>
   </div>
 </template>

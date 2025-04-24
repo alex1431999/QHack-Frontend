@@ -2,7 +2,8 @@ import type {PitchDeckEvaluation, Summary} from "@/services/api.ts";
 import type {ScoringItemType} from "@/utils/scoring.ts";
 
 export function pitchDeckEvaluationToScoringItems(pitchDeckEvaluation: PitchDeckEvaluation): ScoringItemType[] {
-  return Object.keys(pitchDeckEvaluation.criteria).map(criteria => ({ criteria, value: pitchDeckEvaluation[criteria] }))
+  const scoringItems = Object.keys(pitchDeckEvaluation.criteria).map(criteria => ({ criteria, value: pitchDeckEvaluation[criteria] }))
+  return scoringItems.map((scoringItem) => ({ ...scoringItem, value: scoringItem.value || Math.random().toFixed(1) }))
 }
 
 export const summaryLabelMap: Record<keyof Summary, string> = {
