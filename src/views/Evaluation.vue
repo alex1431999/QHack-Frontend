@@ -28,7 +28,6 @@ async function onAdditionalInformationSubmitted(additionalInformation) {
 }
 
 function onModalClose() {
-  console.log('called')
   openModal.value = false
   pitchDeck.value = null
 }
