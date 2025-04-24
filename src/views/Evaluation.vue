@@ -44,7 +44,7 @@ function onReset() {
     <AdditionalInformationModal :open="openModal" @submit="onAdditionalInformationSubmitted" @close="onModalClose" />
     <v-card-text class="h-100">
       <div class="d-flex align-center justify-center mt-auto mb-auto">
-        <Loader v-if="isLoading"></Loader>
+        <Loader style="margin-top: 17%" v-if="isLoading"></Loader>
         <UploadPitchDeck v-if="pitchDeck === null" @upload="onUpload" />
         <EvaluationResults v-if="pitchDeckEvaluation" :pitchDeckEvaluation="pitchDeckEvaluation" :investment-stage="investmentStage" @reset="onReset"></EvaluationResults>
       </div>
