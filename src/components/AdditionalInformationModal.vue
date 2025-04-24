@@ -19,6 +19,14 @@ const emit = defineEmits<{ submit: (additionalInformation: { investmentStage: In
 
           <v-label>Industry</v-label>
           <v-select model-value="FinTech" :items="['FinTech', 'HealthTech', 'ConstructionTech', 'AgrarTech', 'ClimateTech', 'FoodTech', 'Other']"></v-select>
+
+          <v-file-input
+              label="Upload financial data"
+              prepend-icon="mdi-file-upload"
+              outlined
+              dense
+              show-size
+          ></v-file-input>
         </v-card-text>
 
         <v-card-actions>
