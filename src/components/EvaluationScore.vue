@@ -31,7 +31,7 @@ const scoreColor: string = computed(() => score > scoreThreshold ? 'success': 'e
     <v-card-title>
       <div class="d-flex justify-space-between">
         <div>Score</div>
-        <div>{{ score * 100 }}</div>
+        <div>{{ (score * 100).toFixed(1) }}</div>
       </div>
     </v-card-title>
     <v-card-text>
