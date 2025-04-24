@@ -9,7 +9,7 @@ export type Summary = {
   business_model: string | null
   industry: string | null
   required_funding_amount: number | null
-  employees: number | null
+  employees: string | null
   website_link: string | null
   one_sentence_pitch: string | null
   linkedin_profile_ceo: string | null
@@ -40,7 +40,7 @@ export class ApiService {
     })
 
     const data = JSON.parse(response.data.processed_info)
-    const { company_info, ...criteria } = data
+    const { company_info, ...criteria } = data.startup_metrics
 
     return { company_info, criteria }
   }
