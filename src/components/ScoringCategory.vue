@@ -18,7 +18,7 @@ const categoryScoreString = isNaN(categoryScore) ? null : (categoryScore * 100).
     </v-expansion-panel-title>
     <v-expansion-panel-text>
       <ScoringItem v-for="item in items" v-if="items.length" :criteria="item.criteria" :value="item.value" :investment-stage="investmentStage" :key="item.criteria" />
-      <div v-else>No data found...</div>
+      <div v-else>-</div>
     </v-expansion-panel-text>
   </v-expansion-panel>
 </template>

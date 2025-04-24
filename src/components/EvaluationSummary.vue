@@ -21,7 +21,7 @@ const informationListFiltered = informationList.filter(({ label }) => !['busines
       <h2>General</h2>
       <div v-for="information in informationListFiltered" :key="information.label" class="d-flex justify-space-between">
         <div> {{ summaryLabelMap[information.label] }}: </div>
-        <div>{{ information.value || 'No Data...' }}</div>
+        <div>{{ information.value || '-' }}</div>
       </div>
     </v-card-text>
   </v-card>
