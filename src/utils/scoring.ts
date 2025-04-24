@@ -95,7 +95,7 @@ export const criteriaNameMap: Record<Criteria, string> = {
 };
 
 const CATEGORY_WEIGHTS: Record<Category, number> = {
-  'Business Model': 0.1,
+  'Business model': 0.1,
   'Financials': 0.1,
   'Market': 0.15,
   'Problem': 0.1,
@@ -275,18 +275,18 @@ export function normaliseScore(score: number | null) {
 export function computeFinalScore(scoreItems: ScoringItemType[], investmentStage: InvestmentStage) {
   const categoryScores = CATEGORIES.map(category => {
     const items = scoreItems.filter(item => categoryMapping[item.criteria] === category)
-    let score = items.reduce((sum, item) => computeScoreForCriteria(item.criteria, item.value, investmentStage) + sum, 0) / items.length
+    const itemsFiltered = items.filter(item => item.value !== undefined && item.value !== null)
 
-    if (isNaN(score)) score = 0.5
+    let score = 0.5
+
+    if (itemsFiltered.length) {
+       score = itemsFiltered.reduce((sum, item) => computeScoreForCriteria(item.criteria, item.value, investmentStage) + sum, 0) / itemsFiltered.length
+    }
 
     let scoreWeighted = score * CATEGORY_WEIGHTS[category]
-
-    if (isNaN(scoreWeighted)) scoreWeighted = 0.5
 
     return { category, score: scoreWeighted }
   })
 
-  console.log(categoryScores.reduce((sum, category) => category.score + sum, 0))
-
-  return categoryScores.reduce((sum, category) => category.score + sum, 0) / CATEGORIES.length
+  return categoryScores.reduce((sum, category) => category.score + sum, 0)
 }
