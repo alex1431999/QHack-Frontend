@@ -32,6 +32,10 @@ export class ApiService {
     const response = await axios.post(url, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
+      },
+      params: {
+        use_agent_workflow: true,
+        use_modular_workflow: true,
       }
     })
 
